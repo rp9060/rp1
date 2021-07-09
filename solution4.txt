@@ -1,0 +1,48 @@
+package rp;
+import java.util.*;
+
+public class App4
+{
+	public static void main (String[] args)
+	{
+		
+		Scanner sc = new Scanner(System.in);
+		//Enter number of testcases
+		int t = sc.nextInt();
+		while(t>0)
+		{
+		    int n = sc.nextInt();
+		    //Array of String
+		    String[] str = new String[n];
+		    for(int i=0; i<n; i++)
+		    {
+		        str[i] = sc.next();
+		    }
+		    boolean b=true;
+		    for(int i=0; i<n-1; i++)
+		    {
+		    	//This condition check whether he drink milk after eating cookie
+		        if(str[i].equals("cookie") && !(str[i+1].equals("milk")))
+		        {
+		           b=false;
+		           break;
+		        }
+		    }
+		    //At last if he ate cookie then it set to false
+		    if(str[n-1].equals("cookie"))
+		    {
+		        b=false;
+		    }
+		    if(b)
+		      {
+		           System.out.println("YES");
+		      }
+		    
+		       else if(!b)
+		       {
+		           System.out.println("NO");
+		       }
+		    t--;
+		}
+	}
+}
