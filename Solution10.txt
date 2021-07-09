@@ -1,0 +1,30 @@
+package rp;
+
+
+import java.util.*;
+class App10
+{
+	public static void main (String[] args)
+	{
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
+        double hra, da, grossSalary;
+        while(T!=0)
+        {
+            int basicSalary = sc.nextInt();
+            if(basicSalary<1500)
+            {
+                hra = 0.1*basicSalary;
+                da = 0.9*basicSalary;
+            }
+            else
+            {
+                hra = 500;
+                da = 0.98*basicSalary;
+            }
+            grossSalary = basicSalary+hra+da;
+            System.out.printf("%.2f\n",grossSalary);
+          T--;
+        }
+	}
+}
