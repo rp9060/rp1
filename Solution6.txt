@@ -1,0 +1,32 @@
+package rp;
+
+import java.util.*;
+class App6
+{
+	
+	public static void main(String args[]){
+		
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t>0)
+		{
+			int c=sc.nextInt();
+			int d=sc.nextInt();
+			int l=sc.nextInt();
+			int sum=0;
+			if(c>d*2)
+			{
+				sum=c-2*d;
+			}
+			if(l>=(d+sum)*4 && l<=(c+d)*4 && l%4==0)
+			{
+				System.out.println("yes");
+			}
+			else
+			{
+				System.out.println("no");
+			}
+			t--;
+		}
+	}
+}
