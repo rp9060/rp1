@@ -1,0 +1,47 @@
+import java.util.*;
+class App8
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int t=sc.nextInt();
+		while(t>0)
+		{
+			int a=sc.nextInt();
+			int b=sc.nextInt();
+			int n=sc.nextInt();
+			int c,d,div=1;
+			int y=n%2;
+			if(y==0)
+			{
+				if(a>=b)
+				{
+					div=a/b;
+				}
+				else
+				{
+					div=b/a;
+				}
+			}
+			else
+			{
+				c=a*2;
+				d=b;
+				if(c>=d)
+				{
+					div=c/d;
+				}
+				else
+				{
+					div=d/c;
+				}
+			}
+			System.out.println(div);
+		t--
+		}
+	}
+}
+
+					
+				
+					
