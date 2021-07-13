@@ -1,0 +1,114 @@
+Pseudo Code-
+
+1.Take number of tests as input-T
+2.Perform all validity  check on(1<=T<=10)
+3.Consider a String Array s[] of size T
+4.For a loop in range 0 to (T-1) take Strings to check they are dynamic string or not.
+5.Take a loop of range  0 to length of array.
+6.Consider another character array as str[].
+7.Convert first String of array into array of character and store it into str[] and let resultcount=0;
+8.Take a loop of range 0 to length array of character
+9.Find occurance of individual character
+10.if count>=3 then increase resultcount
+11.a)if resultcount>0 then String is dynamic
+    b)if resultcount=0 then String is not dynamic.
+
+
+Actual Code-
+
+package rp;
+import java.util.*;
+public class StringArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+
+		//Read  number of tests to be run
+		int T=sc.nextInt();
+
+		//check that(1<=T<=10)
+		if(T>=1 && T<=10)
+		{
+			//consider string array to enter the number of string of length T
+			String s[]=new String[T];
+			sc.nextLine();
+			//Enter string in a string array s[]
+			for(int i=0;i<s.length;i++)
+			{
+			
+				s[i]=sc.nextLine();
+
+
+			}
+			
+	//This loop will execute until the length of s[]
+		for(int i=0;i<s.length;i++)
+		{
+			//consider resultcount=0 to check how many characters are repeated in as string
+			int resultcount=0;
+
+			//Convert the first  string of array s[] into character array because we can't perform operation on String directly
+			char str[]=s[i].toCharArray();
+	
+			//This loop is used to find out the occurance f each character of a string
+			for(int j=0;j<str.length-1;j++)
+			{
+				//consider count=1 for each character
+				int count=1;
+				/*check if particular character of string is ' ' or not.If the paricular index of character contain ' ' then that character 				was already compared with previous one.If it is not equal to ' ' then we can perform further peration on it.*/
+				if(str[j]!=' ')
+				{
+					//This loop is used to compare particular index character with afterwards character
+					for(int k=j+1;k<str.length;k++)
+					{
+						/*check for whether particular index character matches with afterwards character or not.If 
+						match found then enter into the if block*/
+						if(str[j]==str[k])
+						{
+							/*Increase count by 1 and set compared character to ' ' character because no need 							to check compared character*/
+ 							
+							count++;
+							str[k]=' ';
+						}
+							
+					}
+				}
+		//If occurance of particular index character is greater than or equal to 3 then increase the resultcount by one
+				if(count>=3)
+				{
+					resultcount++;
+				}
+				
+			}
+			//if resultcount>0 then string is dynamic 
+			if(resultcount>0)
+			{
+				System.out.println("Dynamic");
+			}
+			//if resultcount=0 then string is not dynamic 
+			else
+			{
+				System.out.println("Not Dynamic");
+			}
+
+		}
+
+		}
+		
+}
+}
+
+//Input-
+3
+aaaabccc
+aabbcc
+ppppmmnnoooopp
+
+//Output-
+Dynamic
+Not Dynamic
+Dynamic
+
+
+ 
